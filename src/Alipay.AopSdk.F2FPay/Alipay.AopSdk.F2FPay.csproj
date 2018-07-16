@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\..\build\packages.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A34B124D-BA6C-4378-981E-D350AFAE455D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alipay.AopSdk.F2FPay</RootNamespace>
+    <AssemblyName>Alipay.AopSdk.F2FPay</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Alipay.AopSdk.F2FPay.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Alipay.AopSdk.F2FPay.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\AlipayCore.cs" />
+    <Compile Include="Business\AlipayF2FMonitorResult.cs" />
+    <Compile Include="Business\AlipayF2FPayResult.cs" />
+    <Compile Include="Business\AlipayF2FPrepayResult.cs" />
+    <Compile Include="Business\AlipayF2FQueryResult.cs" />
+    <Compile Include="Business\AlipayF2FRefundResult.cs" />
+    <Compile Include="Business\AlipayMonitorImpl.cs" />
+    <Compile Include="Business\Alipaynotify.cs" />
+    <Compile Include="Business\AlipayTradeImpl.cs" />
+    <Compile Include="Business\F2FBiz.cs" />
+    <Compile Include="Business\F2FMonitor.cs" />
+    <Compile Include="Business\F2FResult.cs" />
+    <Compile Include="Business\IAlipayMonitor.cs" />
+    <Compile Include="Business\IAlipayTradeService.cs" />
+    <Compile Include="Domain\AlipayMonitorContentBuilder.cs" />
+    <Compile Include="Domain\AlipayTradePayContentBuilder.cs" />
+    <Compile Include="Domain\AlipayTradePrecreateContentBuilder.cs" />
+    <Compile Include="Domain\AlipayTradeQueryCententBuilder.cs" />
+    <Compile Include="Domain\AlipayTradeRefundContentBuilder.cs" />
+    <Compile Include="Domain\JsonBuilder.cs" />
+    <Compile Include="Model\ExtendParams.cs" />
+    <Compile Include="Model\GoodsInfo.cs" />
+    <Compile Include="Model\PayResultModel.cs" />
+    <Compile Include="Model\ResultEnum.cs" />
+    <Compile Include="Model\TradeInfo.cs" />
+    <Compile Include="Model\TradeStatusModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alipay.AopSdk\Alipay.AopSdk.csproj">
+      <Project>{dcc5b8be-7f16-41c8-96d4-e9b78d3daca8}</Project>
+      <Name>Alipay.AopSdk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
